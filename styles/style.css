@@ -1,1 +1,408 @@
 /* место для вашего кода */
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Regular.woff2") format("woff2"),
+       url("../fonts/Raleway-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Bold.woff2") format("woff2"),
+       url("../fonts/Raleway-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", Arial, sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+/* шапка */
+.header{
+  position: relative;
+  width: 1100px;
+  height: 293px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+
+.logo{
+  position: absolute;
+  top: 92px;
+  left: 478px;
+  width: 148px;
+  height: 105px;
+}
+.logo img{ width:100%; height:100%; display:block; }
+
+
+.menu{
+  position: absolute;
+  top: 133px;
+  left: 50px;
+  display: flex;
+  align-items: center; 
+}
+
+/* ссылки */
+.menu__link{
+  font: 400 18px/21px "Raleway", Arial, sans-serif;
+  color:#000;
+  text-decoration: underline;
+  text-underline-offset: 4px; 
+}
+.menu__link--plain{ text-decoration: none; }
+
+
+.menu__dot{
+  width: 6px; height: 6px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  margin: 0 13px;
+}
+
+
+.contacts{
+  position: absolute;
+  top: 95px;
+  left: 810px;
+  width: 240px;
+  height: 98px;
+  font: 400 18px/1.4 "Raleway", Arial, sans-serif;
+  color:#000;
+}
+.contacts__link{
+  display:block;
+  margin-bottom:6px;
+  color:#000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.contacts__address{ margin:0; }
+
+/* ОНО ТЕБЕ НАДО НАЧАЛО БЛОКА */
+.hero{
+  position: relative;
+  width: 1100px;
+  height: 757px;
+  margin: 0 auto;
+  background: url("../images/cover.jpg") center/cover no-repeat;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1100px;   
+  height: 757px;   
+  background: rgba(0,0,0,0.6);  
+  z-index: 0;
+}
+
+
+.hero__title-box{
+  position:absolute;
+  top:165px; left:50px;          
+  width:1000px; height:385px;
+  pointer-events:none;
+  z-index:1;                     
+}
+
+.hero__row{
+  position:absolute;
+  margin:0;
+  color:#fff;                    
+  font-family:"Raleway", Arial, sans-serif;
+  font-weight:700;
+  font-size:100px;
+  line-height:1.15;              
+  letter-spacing:.3em;           
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+/* ОНО */
+.hero__row--1{ top:0;    left:0;       width:286px; height:115px; text-align:left; }
+/* ТЕБЕ */
+.hero__row--2{ top:135px; left:330.5px; width:339px; height:115px; text-align:center; }
+/* НАДО */
+.hero__row--3{ top:270px; left:613px;  width:387px; height:115px; text-align:right; }
+
+
+.hero__subtitle--fixed{
+  position:absolute; z-index:1;
+  top:668px; left:50px;
+  width:637px; height:28px;
+  font:400 22px/28px "Raleway", Arial, sans-serif;
+  text-transform:uppercase; color:#fff; margin:0;
+  --base-space: .48em;
+}
+.hero__subtitle--fixed .w{ white-space:nowrap; }
+.hero__subtitle--fixed .ws{ display:inline-block; width:var(--base-space); height:1px; }
+.hero__subtitle--fixed .ws-90{  width:calc(var(--base-space)*.90); }
+.hero__subtitle--fixed .ws-80{  width:calc(var(--base-space)*.80); }
+.hero__subtitle--fixed .ws-110{ width:calc(var(--base-space)*1.10); }
+
+/* Кнопка */
+.hero__cta{
+  position:absolute; z-index:1;
+  top:656px; left:794px; width:256px; height:51px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid #fff; background:transparent; color:#fff;
+  font:500 22px/1 "Raleway", Arial, sans-serif;
+  text-transform:uppercase; text-decoration:none;
+}
+.hero__cta:hover{ text-decoration:none; background:transparent; color:#fff; }
+
+
+.visually-hidden{
+  position:absolute!important; width:1px; height:1px; margin:-1px; padding:0; border:0;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;
+}
+/* ОНО ТЕБЕ НАДО КОНЕЦ БЛОКА */
+
+
+
+/* ЛОТЫ НАЧАЛО БЛОКА */
+.lots {
+  width: 1052px;
+  margin: 180px auto 0;
+}
+
+.lots__title {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+
+.lots__cards {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+}
+
+.card {
+  position: relative;
+  width: 334px;
+  height: 596px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+
+  /* затемнение */
+  overflow: hidden;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.card__link {
+  position: relative;
+  z-index: 1;
+  display: flex;              
+  flex-direction: column;     
+  justify-content: space-between; 
+  height: 100%;
+
+  padding: 40px;              
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.card__title {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.card__text {
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* картинки */
+.card--film     { background-image: url("../images/card-lot-01.jpg"); }
+.card--book     { background-image: url("../images/card-lot-02.jpg"); }
+.card--painting { background-image: url("../images/card-lot-03.jpg"); }
+
+.lots__more {
+  font-size: 16px;
+  text-decoration: underline;
+  color: #000;
+}
+/* ЛОТЫ КОНЕЦ БЛОКА */
+
+
+/*ОБ АУКЦИОНЕ НАЧАЛО БЛОКА */
+.about{
+  position: relative;
+  width: 1052px;
+  height: 595px;
+  margin: 120px auto 0; 
+  background: #fff;
+}
+
+
+.about__logo{
+  position: absolute;
+  left: 47px;
+  top: 35px;
+  width: 240px;
+  height: 240px;
+}
+
+/* чёрный круг */
+.about__circle{
+  width: 240px;
+  height: 240px;
+  background: #000;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* белый логотип внутри круга */
+.about__logo-img{
+  position: absolute;
+  left: 46.48px;
+  top: 64px;
+  width: 148px;
+  height: 114px;
+  display: block;
+}
+
+/* правая колонка */
+.about__body{
+  position: absolute;
+  left: 359px;
+  top: 133px;
+  width: 693px;
+  height: 449px; 
+  color: #000;
+  background: #fff;
+}
+
+/* заголовок  */
+.about__title{
+  margin: 3px 0 24px 0; 
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;       
+  text-transform: uppercase;
+}
+
+/* абзацы  */
+.about__text p{
+  margin: 0 0 24px 0;
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;      
+  letter-spacing: 0;
+}
+
+.about__text p:last-child{ margin-bottom: 0; }
+/*ОБ АУКЦИОНЕ КОНЕЦ БЛОКА */
+
+
+
+/* ФУТЕР НАЧАЛО БЛОКА*/
+.footer {
+  position: relative;
+  width: 1100px;
+  height: 180px;
+  margin: 180px auto 0;
+  background: #fff;
+}
+
+/* Контакты */
+.footer__contacts {
+  position: absolute;
+  top: 0;             
+  left: 50px;
+  width: 360px;
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24.3px;
+  font-style: normal;
+  color: #000;
+}
+
+.footer__contacts-link {
+  display: block;
+  margin-bottom: 6px;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer__contacts-item {
+  margin: 0 0 6px;
+}
+
+/* Меню по центру */
+.footer__menu {
+  position: absolute;
+  top: 0;               
+  left: 468.6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__menu-link {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer__menu-link--underline {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Соцсети */
+.socials {
+  position: absolute;
+  top: 0;              
+  left: 810px;
+  display: flex;
+  gap: 48px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socials li {
+  width: 48px;
+  height: 48px;
+}
+
+.socials img {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+/*ФУТЕР КОНЕЦ БЛОКА */
+
